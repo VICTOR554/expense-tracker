@@ -55,17 +55,40 @@ function ExpenseForm() {
     //   });
   }
 
+  function submitHandler(event) {
+    event.preventDefault();
+
+    const expenseData = {
+      title: inputTitle,
+      amount: inputAmount,
+      date: new Date(inputDate),
+    };
+
+    console.log(expenseData);
+    setInputTitle('');
+    setInputAmount('');
+    setInputDate('');
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>
-            <input type="text" onChange={titleChangeHandler} />
+            <input
+              type="text"
+              value={inputTitle}
+              onChange={titleChangeHandler}
+            />
           </div>
           <div className="new-expense__control">
             <label>Amount</label>
-            <input type="number" onChange={amountChangeHandler} />
+            <input
+              type="number"
+              value={inputAmount}
+              onChange={amountChangeHandler}
+            />
           </div>
           <div className="new-expense__control">
             <label>Date</label>
@@ -73,6 +96,7 @@ function ExpenseForm() {
               type="date"
               min="2019-01-01"
               max="2022-12-31"
+              value={inputDate}
               onChange={dateChangeHandler}
             />
           </div>
