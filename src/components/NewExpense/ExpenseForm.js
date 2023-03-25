@@ -7,52 +7,16 @@ function ExpenseForm(props) {
   const [inputAmount, setInputAmount] = useState('');
   const [inputDate, setInputDate] = useState('');
 
-  //Using one State
-  //   const [userInput, setUserInput] = useState({
-  //     inputTitle: '',
-  //     inputAmount: '',
-  //     inputDate: '',
-  //   });
-
   function titleChangeHandler(event) {
     setInputTitle(event.target.value);
-
-    //Using one state but relies on previous state and can cause problems
-    // setUserInput({
-    //   ...userInput,
-    //   inputTitle: event.target.value,
-    // });
-
-    //Using one state but using a function to rely on previous state to remove problems
-    // setUserInput((prevState) => {
-    //   return { ...prevState, inputTitle: event.target.value };
-    // });
   }
 
   function amountChangeHandler(event) {
     setInputAmount(event.target.value);
-
-    // setUserInput({
-    //   ...userInput,
-    //   inputAmount: event.target.value,
-    // });
-
-    // setUserInput((prevState) => {
-    //     return { ...prevState, inputAmount: event.target.value };
-    //   });
   }
 
   function dateChangeHandler(event) {
     setInputDate(event.target.value);
-
-    // setUserInput({
-    //   ...userInput,
-    //   inputDate: event.target.value,
-    // });
-
-    // setUserInput((prevState) => {
-    //     return { ...prevState, inputDate: event.target.value };
-    //   });
   }
 
   function submitHandler(event) {
