@@ -1,7 +1,7 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import React, { useState } from 'react';
-import Header from './components/UI/Header';
+import Header from './components/layout/Header';
 
 const initialExpenses = [
   {
