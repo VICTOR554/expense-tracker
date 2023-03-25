@@ -1,6 +1,7 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import React, { useState } from 'react';
+import Header from './components/UI/Header';
 
 const initialExpenses = [
   {
@@ -35,9 +36,11 @@ function App() {
 
   return (
     <div>
-      <h2>Expense Tracker</h2>
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Header />
+      <div>
+        <NewExpense onAddExpense={addExpenseHandler} />
+        <Expenses items={expenses} />
+      </div>
     </div>
   );
 }
